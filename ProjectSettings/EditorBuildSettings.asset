@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/menu/start.unity
+    guid: cdc966a34ec7243498b935955c5aedfa
+  - enabled: 0
+    path: Assets/Scenes/notNeed/loading.unity
+    guid: a53b184eed828044791f0f55fde69b21
+  - enabled: 0
+    path: Assets/Scenes/notNeed/lobby.unity
+    guid: 6a733177c770c3b46b6ef98251d3ed5f
+  - enabled: 1
+    path: Assets/Scenes/menu/ChangeSkin.unity
+    guid: ad95c0af5e5f3c84eada23bd10ad0c47
+  - enabled: 0
+    path: Assets/Scenes/notNeed/ChangeS.unity
+    guid: 7f08a8231a98c2748a31eff2d8b5970f
+  - enabled: 0
+    path: Assets/Scenes/notNeed/nightMode.unity
+    guid: 2b2e4d009430e984f940abf522676fcf
+  - enabled: 0
+    path: Assets/Scenes/notNeed/Game.unity
+    guid: 32ef7438f7384e34a898e5e422edf422
+  - enabled: 0
+    path: Assets/Scenes/notNeed/complete.unity
+    guid: d488b3499b6e6624cbbb9f8ac50b3206
+  - enabled: 0
+    path: Assets/Scenes/notNeed/failed.unity
+    guid: 1e6fcd4bc1096da488a836873fb97c63
+  - enabled: 1
+    path: Assets/Scenes/level 1.unity
+    guid: 4c05cd703824e7345bd5da7841578706
+  - enabled: 0
+    path: Assets/Scenes/notNeed/chooseMod.unity
+    guid: 4e676a58b5538a64b82483cce1a70412
+  m_configObjects: {}
