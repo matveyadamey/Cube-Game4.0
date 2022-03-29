@@ -66,13 +66,13 @@ public class collision : MonoBehaviour
             if (transform.position.z < front)
             {
                 TryDestroyHeart();
-                player.transform.position = other.transform.position + new Vector3(0, 5, -3);
+                player.transform.position = other.transform.position + new Vector3(0, 5, -6);
             }
         }
         if (other.gameObject.tag == "floor")
         {
             TryDestroyHeart();
-            player.transform.position = other.transform.position + new Vector3(0, 10, -3);
+            player.transform.position = other.transform.position + new Vector3(0, 8,0);
         }
         if (LifeCount == 0)
         {
