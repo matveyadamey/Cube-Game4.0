@@ -71,8 +71,7 @@ public class collision : MonoBehaviour
         }
         if (other.gameObject.tag == "floor")
         {
-            TryDestroyHeart();
-            player.transform.position = other.transform.position + new Vector3(0, 8,0);
+            Death();
         }
         if (LifeCount == 0)
         {

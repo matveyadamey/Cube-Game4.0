@@ -6,6 +6,11 @@ public class volume : MonoBehaviour
 {
     public float musicVolume;
     public float value;
+    private void Start()
+    {
+        var v = AudioListener.volume;
+        GetComponent<Slider>().value = v;
+    }
     void Update()
     {
         value=PlayerPrefs.GetFloat("volume");

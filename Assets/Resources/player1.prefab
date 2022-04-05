@@ -11,15 +11,13 @@ GameObject:
   - component: {fileID: 6564696669522852684}
   - component: {fileID: 175081019892237437}
   - component: {fileID: 4074687245565094993}
-  - component: {fileID: 6971160281401515473}
   - component: {fileID: 898831526491780408}
   - component: {fileID: 6564696669496423342}
   - component: {fileID: 2344067820028306270}
   - component: {fileID: 6564696669235790694}
-  - component: {fileID: 3641103412715229779}
-  - component: {fileID: 3434466332546586262}
   - component: {fileID: 6564696669496423336}
   - component: {fileID: 6564696669496423343}
+  - component: {fileID: 674406594680535225}
   m_Layer: 0
   m_Name: player1
   m_TagString: Untagged
@@ -69,7 +67,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 904d527d0d8ddee4ea818e8552baa311, type: 2}
+  - {fileID: 2100000, guid: 1e1618d59ca2d4b4694f4bd13246746b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -91,19 +89,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &6971160281401515473
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6564696669496423337}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 0.941197, z: 1}
-  m_Center: {x: 0, y: 0.029401511, z: 0}
 --- !u!54 &898831526491780408
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -132,7 +117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ab0cf4e4bcfb2246a57544ee2acb4b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 0
+  player: {fileID: 0}
+  moneyText: {fileID: 0}
 --- !u!114 &2344067820028306270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,62 +150,6 @@ MonoBehaviour:
   script1: {fileID: 6564696669496423342}
   script2: {fileID: 0}
   pauseMenu: {fileID: 0}
---- !u!114 &3641103412715229779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6564696669496423337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 0
-  observableSearch: 2
-  ObservedComponents:
-  - {fileID: 3434466332546586262}
-  sceneViewId: 0
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
---- !u!114 &3434466332546586262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6564696669496423337}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8efc6b1d64977384eb3405357896c656, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PositionModel:
-    SynchronizeEnabled: 1
-    TeleportEnabled: 1
-    TeleportIfDistanceGreaterThan: 3
-    InterpolateOption: 2
-    InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 1
-    ExtrapolateOption: 0
-    ExtrapolateSpeed: 1
-    ExtrapolateIncludingRoundTripTime: 1
-    ExtrapolateNumberOfStoredPositions: 1
-  m_RotationModel:
-    SynchronizeEnabled: 0
-    InterpolateOption: 1
-    InterpolateRotateTowardsSpeed: 180
-    InterpolateLerpSpeed: 5
-  m_ScaleModel:
-    SynchronizeEnabled: 0
-    InterpolateOption: 0
-    InterpolateMoveTowardsSpeed: 1
-    InterpolateLerpSpeed: 0
 --- !u!114 &6564696669496423336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,12 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 6564696669496423337}
-  skin1: {fileID: 2100000, guid: 904d527d0d8ddee4ea818e8552baa311, type: 2}
-  skin2: {fileID: 2100000, guid: 127d3ae60207c9f498a594185d662638, type: 2}
-  skin3: {fileID: 2100000, guid: 5a8d2b1de641ca14e9288fff01fbc8d3, type: 2}
-  skin4: {fileID: 2100000, guid: 52b19ce0170e0e64187ddf3b61c596ff, type: 2}
-  skin5: {fileID: 2100000, guid: 1e1618d59ca2d4b4694f4bd13246746b, type: 2}
-  NumberSkin: 2
+  skin: {fileID: 0}
 --- !u!114 &6564696669496423343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,6 +176,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 021ba9fc335fac940af4eadd7fc8c77d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!136 &674406594680535225
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6564696669496423337}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.4995678
+  m_Height: 1.0076957
+  m_Direction: 1
+  m_Center: {x: -0.004168451, y: 0.0019017458, z: -0.003915429}
 --- !u!1 &6634784178237781205
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,6 +202,7 @@ GameObject:
   - component: {fileID: 2189435421056231663}
   - component: {fileID: 2081876648994641412}
   - component: {fileID: 4364466196985533452}
+  - component: {fileID: 311292492302499065}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -349,3 +289,35 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &311292492302499065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6634784178237781205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
