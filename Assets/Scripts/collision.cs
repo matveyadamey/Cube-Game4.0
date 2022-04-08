@@ -6,6 +6,7 @@ public class collision : MonoBehaviour
 {
     [SerializeField] private GameObject effect;
     [SerializeField] Aboba aboba;
+    [SerializeField] private GameObject heart;
     private GameObject failed;
     private GameObject[] music;
     private int rand;
@@ -22,6 +23,7 @@ public class collision : MonoBehaviour
 
     private void Start()
     {
+        PlayerPrefs.SetInt("money", manager.money);
         aboba = GameObject.Find("aboba").GetComponent<Aboba>();
         ScoreText = aboba.ScoreText;
         failed = aboba.failed;
@@ -54,7 +56,7 @@ public class collision : MonoBehaviour
     }
 
     void OnCollisionEnter(Collision other)
-    { 
+    {
         if (other.gameObject.tag == "enemy")
         {
             TryDestroyHeart();
@@ -71,6 +73,7 @@ public class collision : MonoBehaviour
         }
         if (other.gameObject.tag == "floor")
         {
+            heart.SetActive(false);
             Death();
         }
         if (LifeCount == 0)

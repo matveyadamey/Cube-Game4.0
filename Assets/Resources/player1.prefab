@@ -18,6 +18,8 @@ GameObject:
   - component: {fileID: 6564696669496423336}
   - component: {fileID: 6564696669496423343}
   - component: {fileID: 674406594680535225}
+  - component: {fileID: 2189348690231355040}
+  - component: {fileID: 303888136466359666}
   m_Layer: 0
   m_Name: player1
   m_TagString: Untagged
@@ -190,6 +192,44 @@ CapsuleCollider:
   m_Height: 1.0076957
   m_Direction: 1
   m_Center: {x: -0.004168451, y: 0.0019017458, z: -0.003915429}
+--- !u!114 &2189348690231355040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6564696669496423337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b363a1a2197a9e4eb367fc18b2258aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &303888136466359666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6564696669496423337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 463c9b2b76cadfb469250bcc565baa8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effect: {fileID: 2336804644662355327, guid: 9b23c4b21887a59468634fe3506818c8, type: 3}
+  aboba: {fileID: 0}
+  heart: {fileID: 0}
+  LifeCount: 3
+  hearts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  player: {fileID: 6564696669496423337}
+  points:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &6634784178237781205
 GameObject:
   m_ObjectHideFlags: 0
