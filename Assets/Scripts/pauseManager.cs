@@ -22,6 +22,8 @@ public class pauseManager : MonoBehaviour
         timer.NotPause = false;
         game_is_paused = true;
         im.sprite = pic1;
+        Time.timeScale = 0f;
+
 
     }
     void resume()
@@ -30,6 +32,7 @@ public class pauseManager : MonoBehaviour
         timer.NotPause = true;
         game_is_paused = false;
         im.sprite = pic2;
+        Time.timeScale = 1f;
     }
     public void check()
     {

@@ -59,6 +59,7 @@ public class collision : MonoBehaviour
     {
         if (other.gameObject.tag == "enemy")
         {
+            Instantiate(effect, transform.position, Quaternion.identity);
             TryDestroyHeart();
             Destroy(other.gameObject);
         }
@@ -67,12 +68,14 @@ public class collision : MonoBehaviour
             var front = other.gameObject.transform.position.z-3.5;
             if (transform.position.z < front)
             {
+                Instantiate(effect, transform.position, Quaternion.identity);
                 TryDestroyHeart();
                 player.transform.position = other.transform.position + new Vector3(0, 5, -6);
             }
         }
         if (other.gameObject.tag == "floor")
         {
+            Instantiate(effect, transform.position, Quaternion.identity);
             heart.SetActive(false);
             Death();
         }
