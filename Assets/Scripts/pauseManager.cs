@@ -10,7 +10,6 @@ public class pauseManager : MonoBehaviour
     public Sprite pic2;
     public Image im;
     public manager script1;
-    public controller script2;
     public GameObject pauseMenu;
     void Start()
     {

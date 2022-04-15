@@ -29,7 +29,6 @@ public class collision : MonoBehaviour
         failed = aboba.failed;
         failedSound = aboba.failedSound;
         music = aboba.music;
-        //effect = aboba.effect;
         rand = UnityEngine.Random.Range(0, music.Length);
         pauseMenu = aboba.pauseMenu;
     }
