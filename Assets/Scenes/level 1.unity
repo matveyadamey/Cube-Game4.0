@@ -1959,6 +1959,7 @@ GameObject:
   - component: {fileID: 504748961}
   - component: {fileID: 504748963}
   - component: {fileID: 504748962}
+  - component: {fileID: 504748964}
   m_Layer: 5
   m_Name: dark
   m_TagString: Untagged
@@ -1983,7 +1984,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -21.460104, y: -11.2960205}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 1200, y: 1411.7646}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &504748962
 MonoBehaviour:
@@ -2005,7 +2006,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 32b97f007cbf32341a979e3977d5782a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2023,6 +2024,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 504748960}
   m_CullTransparentMesh: 1
+--- !u!114 &504748964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504748960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86710e43de46f6f4bac7c8e50813a599, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AspectMode: 1
+  m_AspectRatio: 0.85
 --- !u!1 &506811340
 GameObject:
   m_ObjectHideFlags: 0
@@ -2106,7 +2121,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 281.37073, y: -672}
+  m_AnchoredPosition: {x: 367, y: -672}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &526299175
@@ -3540,7 +3555,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -5569,7 +5584,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7674666662364076260, guid: a04a7367b35446343ac62d4d70b6f8b2, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7674666662364076263, guid: a04a7367b35446343ac62d4d70b6f8b2, type: 3}
       propertyPath: m_RootOrder
@@ -5744,6 +5759,10 @@ PrefabInstance:
     - target: {fileID: 3989521933721325979, guid: d1338920321eeb14eb4fd5c69dee13c5, type: 3}
       propertyPath: m_Name
       value: lev3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3989521933721325979, guid: d1338920321eeb14eb4fd5c69dee13c5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4299150237289744353, guid: d1338920321eeb14eb4fd5c69dee13c5, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -6121,12 +6140,32 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1044602402}
     - target: {fileID: 311292492302499065, guid: 086149e72019c914ab498b28d8208c0b, type: 3}
+      propertyPath: m_StopNaN
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 311292492302499065, guid: 086149e72019c914ab498b28d8208c0b, type: 3}
+      propertyPath: m_Dithering
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 311292492302499065, guid: 086149e72019c914ab498b28d8208c0b, type: 3}
       propertyPath: m_CameraType
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 311292492302499065, guid: 086149e72019c914ab498b28d8208c0b, type: 3}
+      propertyPath: m_Antialiasing
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 311292492302499065, guid: 086149e72019c914ab498b28d8208c0b, type: 3}
+      propertyPath: m_RenderShadows
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 311292492302499065, guid: 086149e72019c914ab498b28d8208c0b, type: 3}
       propertyPath: m_RendererIndex
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 311292492302499065, guid: 086149e72019c914ab498b28d8208c0b, type: 3}
+      propertyPath: m_AntialiasingQuality
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 311292492302499065, guid: 086149e72019c914ab498b28d8208c0b, type: 3}
       propertyPath: m_RenderPostProcessing
@@ -6174,7 +6213,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4364466196985533452, guid: 086149e72019c914ab498b28d8208c0b, type: 3}
       propertyPath: far clip plane
-      value: 47
+      value: 54.44
       objectReference: {fileID: 0}
     - target: {fileID: 6564696669235790694, guid: 086149e72019c914ab498b28d8208c0b, type: 3}
       propertyPath: im
@@ -6236,6 +6275,10 @@ PrefabInstance:
       propertyPath: force
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 6564696669496423343, guid: 086149e72019c914ab498b28d8208c0b, type: 3}
+      propertyPath: manage
+      value: 
+      objectReference: {fileID: 1676030823}
     - target: {fileID: 6564696669496423343, guid: 086149e72019c914ab498b28d8208c0b, type: 3}
       propertyPath: m_Enabled
       value: 1

@@ -21,7 +21,7 @@ public class ScoreController : MonoBehaviour
         }
         score.text = "Score:" + scorePlayer.ToString();
         highScore.text = "High score:" + Highscore.ToString();
-
+        print(scorePlayer);
     }
 
 

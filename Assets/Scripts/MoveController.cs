@@ -3,6 +3,7 @@ using UnityEngine;
 public class MoveController : MonoBehaviour
 {
     public static bool checkColl;
+    [SerializeField] private GameObject manage;
     private float force=18;
     public static int speed = 15;
     Rigidbody rb;
@@ -33,6 +34,10 @@ public class MoveController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.UpArrow) && checkColl)
             {
                 Jump();
+                if (manage.active)
+                {
+                    manage.SetActive(false);
+                }
             }
             
             
