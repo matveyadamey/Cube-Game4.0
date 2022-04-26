@@ -8,29 +8,7 @@
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
-  	<!-- Yandex Games SDK -->
-<script src="https://yandex.ru/games/sdk/v2"></script>
-
-
-<!-- Запуск рекламы при старте игры -->
-<script type="text/javascript">
-  var player;
-  var sdk;
-  var payments = null;
-
-
-  YaGames.init({
-    adv: {
-      onAdvClose: wasShown => {
-        console.info('adv closed!');
-      }
-    }
-  })
-    .then(ysdk => {
-      sdk = ysdk;
-      sdk.adv.showFullscreenAdv({ callbacks: {} });
-    });
-</script>
+  	
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=960 height=600></canvas>
       <div id="unity-loading-bar">

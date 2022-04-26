@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,12 +13,12 @@ public class ScoreController : MonoBehaviour
         Highscore = PlayerPrefs.GetFloat("highscore");
         scorePlayer = PlayerPrefs.GetFloat("score");
         if (scorePlayer >= Highscore)
-        {
+        { 
             Highscore = scorePlayer;
             PlayerPrefs.SetFloat("highscore", Highscore);
         }
-        score.text = "Score:" + scorePlayer.ToString();
-        highScore.text = "High score:" + Highscore.ToString();
+        score.text = "—чет:" + scorePlayer.ToString();
+        highScore.text = "Ћучший счет:" + Highscore.ToString();
         print(scorePlayer);
     }
 

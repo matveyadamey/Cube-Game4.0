@@ -23,7 +23,7 @@ public class collision : MonoBehaviour
 
     private void Start()
     {
-        PlayerPrefs.SetInt("money", manager.money);
+        money=PlayerPrefs.GetInt("money");
         aboba = GameObject.Find("aboba").GetComponent<Aboba>();
         ScoreText = aboba.ScoreText;
         failed = aboba.failed;
@@ -90,9 +90,9 @@ public class collision : MonoBehaviour
         Instantiate(effect, transform.position, Quaternion.identity);
         music[rand].SetActive(false);
         failedSound.SetActive(true);
-        money = manager.money;
         money += manager.moneyInGame;
         PlayerPrefs.SetInt("money",money);
+        print("money"+money);
         manager.moneyInGame = 0;
         Invoke("StopAll", 0.7f);
     }

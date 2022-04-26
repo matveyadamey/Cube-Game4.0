@@ -7,7 +7,6 @@ public class manager : MonoBehaviour
     private GameObject[] music;
     private GameObject confeti;
     private int rand;
-    public static int money;
     public static int moneyInGame=0;
     private GameObject moneyEffect;
     Aboba aboba;
@@ -23,7 +22,6 @@ public class manager : MonoBehaviour
         confeti = aboba.confeti;
         moneyEffect = aboba.moneyEffect;
         Time.timeScale = 1;
-        money = PlayerPrefs.GetInt("money");
         rand = Random.Range(0, music.Length);
         music[rand].SetActive(true);
         moneyText.gameObject.SetActive(false);
@@ -35,6 +33,8 @@ public class manager : MonoBehaviour
              moneyInGame++;
              moneyText.text = moneyInGame.ToString();
              moneyText.gameObject.SetActive(true);
+            print(moneyInGame);
+            
             var main = moneyEffect.GetComponent<ParticleSystem>().main;
             main.startColor = player.gameObject.GetComponent<MeshRenderer>().material.color;
             Instantiate(moneyEffect,transform.position, Quaternion.identity);
@@ -42,7 +42,7 @@ public class manager : MonoBehaviour
             }
             if (other.tag == "win")
             {
-                StartCoroutine(win());
+                StartCoroutine(win()); 
             }
     }
     private IEnumerator win()
