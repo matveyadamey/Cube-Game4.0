@@ -19,7 +19,6 @@ public class ScoreController : MonoBehaviour
         }
         score.text = "—чет:" + scorePlayer.ToString();
         highScore.text = "Ћучший счет:" + Highscore.ToString();
-        print(scorePlayer);
     }
 
 

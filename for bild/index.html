@@ -6,9 +6,46 @@
     <title>Unity WebGL Player | CubeGame3D</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
+<!-- Yandex Games SDK -->
+<script src="https://yandex.ru/games/sdk/v2"></script>
+
+
+<!-- Запуск рекламы при старте игры -->
+<script type="text/javascript">
+  var player;
+  var sdk;
+  var payments = null;
+
+
+  YaGames.init({
+    adv: {
+      onAdvClose: wasShown => {
+        console.info('adv closed!');
+      }
+    }
+  })
+    .then(ysdk => {
+      sdk = ysdk;
+      sdk.adv.showFullscreenAdv({ callbacks: {} });
+    });
+</script>
+<!-- Обработка рекламы в нужное время -->
+<script>
+  function showFullscrenAd() {
+    sdk.adv.showFullscreenAdv({
+      callbacks: {
+        onClose: function (wasShown) {
+          unityInstance.SendMessage('YandexSDK', 'OnInterstitialShown');
+        },
+        onError: function (error) {
+          unityInstance.SendMessage('YandexSDK', 'OnInterstitialFailed', error);
+        }
+      }
+    })
+  }
+</script>
   </head>
   <body>
-  	
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=960 height=600></canvas>
       <div id="unity-loading-bar">

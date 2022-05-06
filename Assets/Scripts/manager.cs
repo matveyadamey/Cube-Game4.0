@@ -11,11 +11,12 @@ public class manager : MonoBehaviour
     private GameObject moneyEffect;
     Aboba aboba;
     public GameObject player;
-    public Text moneyText;
+    private Text moneyText;
 
     
     void Start()
     {
+        print("it is new");
         aboba = GameObject.Find("aboba").GetComponent<Aboba>();
         complete = aboba.complete;
         music = aboba.music;
@@ -24,6 +25,7 @@ public class manager : MonoBehaviour
         Time.timeScale = 1;
         rand = Random.Range(0, music.Length);
         music[rand].SetActive(true);
+        moneyText = aboba.moneyText;
         moneyText.gameObject.SetActive(false);
     }
     void OnTriggerEnter(Collider other)
@@ -33,13 +35,12 @@ public class manager : MonoBehaviour
              moneyInGame++;
              moneyText.text = moneyInGame.ToString();
              moneyText.gameObject.SetActive(true);
-            print(moneyInGame);
-            
-            var main = moneyEffect.GetComponent<ParticleSystem>().main;
-            main.startColor = player.gameObject.GetComponent<MeshRenderer>().material.color;
-            Instantiate(moneyEffect,transform.position, Quaternion.identity);
+             var main = moneyEffect.GetComponent<ParticleSystem>().main;
+             main.startColor = player.gameObject.GetComponent<MeshRenderer>().material.color;
+             Instantiate(moneyEffect,transform.position, Quaternion.identity);
              Destroy(other.gameObject);
             }
+
             if (other.tag == "win")
             {
                 StartCoroutine(win()); 

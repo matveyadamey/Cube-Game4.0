@@ -15,6 +15,10 @@ public class Aboba : MonoBehaviour
     public GameObject confeti;
     public GameObject moneyEffect;
     public Image whiteScreen;
+    public GameObject heart;
+    public GameObject[] hearts;
+    public GameObject manage;
+    public Text moneyText;
     private void Start()
     {
         StartCoroutine(TransitionIn());

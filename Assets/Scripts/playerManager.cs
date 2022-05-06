@@ -2,23 +2,22 @@ using UnityEngine;
 
 public class playerManager : MonoBehaviour
 {
-    public GameObject player;
-    public Material skin;
+    [SerializeField] private GameObject skin;
     int NumberSkin;
     string nameSkin;
-    void Start()
+
+    
+    void Awake()
     {
         NumberSkin = PlayerPrefs.GetInt("skinNum");
         if (NumberSkin == 0)
         {
             NumberSkin = 1;
         }
-    }
-    void Update()
-    {
-        nameSkin = "skins/" + "playerMat" + NumberSkin.ToString();
-        skin = Resources.Load<Material>(nameSkin);
-        
-        player.GetComponent<MeshRenderer>().material = skin;
+        string skinName = "skins/" + "player" + NumberSkin.ToString();
+
+        var skin = Resources.Load(skinName) as GameObject;
+        GameObject player = Instantiate(skin,new Vector3(), Quaternion.identity);
+        player.transform.SetParent(transform.transform, false);
     }
 }

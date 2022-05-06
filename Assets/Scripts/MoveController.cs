@@ -3,14 +3,16 @@ using UnityEngine;
 public class MoveController : MonoBehaviour
 {
     public static bool checkColl;
-    [SerializeField] private GameObject manage;
-    private float force=18;
+    private GameObject manage;
+    private float force=15;
     public static int speed = 15;
     Rigidbody rb;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+        var aboba = GameObject.Find("aboba").GetComponent<Aboba>();
+        manage=aboba.manage;
     }
 
     void Update()

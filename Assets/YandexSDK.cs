@@ -66,6 +66,7 @@ public class YandexSDK : MonoBehaviour {
     /// </summary>
     public void ShowInterstitial() {
         ShowFullscreenAd();
+        print("реклама вызвана");
     }
 
     /// <summary>

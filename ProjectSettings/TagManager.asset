@@ -12,6 +12,7 @@ TagManager:
   - earth
   - lat
   - floor
+  - wall
   layers:
   - Default
   - TransparentFX

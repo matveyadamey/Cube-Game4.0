@@ -5,6 +5,7 @@ using System;
 public class collision : MonoBehaviour
 {
     [SerializeField] private GameObject effect;
+    [SerializeField] private GameObject effectDeath;
     [SerializeField] Aboba aboba;
     [SerializeField] private GameObject heart;
     private GameObject failed;
@@ -19,12 +20,14 @@ public class collision : MonoBehaviour
     public GameObject[] hearts;
     int i = 0;
     public GameObject player;
-    public GameObject[] points;
-
+    Rigidbody rb;
     private void Start()
     {
+        rb = GetComponent<Rigidbody>();
         money=PlayerPrefs.GetInt("money");
         aboba = GameObject.Find("aboba").GetComponent<Aboba>();
+        hearts = aboba.hearts;
+        heart = aboba.heart;
         ScoreText = aboba.ScoreText;
         failed = aboba.failed;
         failedSound = aboba.failedSound;
@@ -58,18 +61,24 @@ public class collision : MonoBehaviour
     {
         if (other.gameObject.tag == "enemy")
         {
-            Instantiate(effect, transform.position, Quaternion.identity);
             TryDestroyHeart();
-            Destroy(other.gameObject);
+            if (LifeCount > 0)
+            {
+                Instantiate(effect, transform.position, Quaternion.identity);
+                Destroy(other.gameObject);
+            }
         }
         if (other.gameObject.tag == "lat") 
         {
             var front = other.gameObject.transform.position.z-3.5;
             if (transform.position.z < front)
             {
-                Instantiate(effect, transform.position, Quaternion.identity);
                 TryDestroyHeart();
-                player.transform.position = other.transform.position + new Vector3(0, 5, -6);
+                if (LifeCount > 0)
+                {
+                    Instantiate(effect, transform.position, Quaternion.identity);
+                    player.transform.position = other.transform.position + new Vector3(0, 5, -6);
+                }
             }
         }
         if (other.gameObject.tag == "floor")
@@ -87,12 +96,12 @@ public class collision : MonoBehaviour
     private void Death()
     {
         timer.NotPause = false;
-        Instantiate(effect, transform.position, Quaternion.identity);
+        Instantiate(effectDeath, transform.position, Quaternion.identity);
+        player.SetActive(false);
         music[rand].SetActive(false);
         failedSound.SetActive(true);
         money += manager.moneyInGame;
         PlayerPrefs.SetInt("money",money);
-        print("money"+money);
         manager.moneyInGame = 0;
         Invoke("StopAll", 0.7f);
     }

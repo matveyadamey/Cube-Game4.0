@@ -15,7 +15,7 @@ public class pauseManager : MonoBehaviour
     {
         timer.NotPause = false;
     }
-    public void pause()
+    void pause()
     {
         pauseMenu.SetActive(true);
         timer.NotPause = false;
