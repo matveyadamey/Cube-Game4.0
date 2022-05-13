@@ -19,12 +19,9 @@ public class collision : MonoBehaviour
     public int LifeCount=3;
     public GameObject[] hearts;
     int i = 0;
-    public GameObject player;
-    Rigidbody rb;
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        money=PlayerPrefs.GetInt("money");
+        money =PlayerPrefs.GetInt("money");
         aboba = GameObject.Find("aboba").GetComponent<Aboba>();
         hearts = aboba.hearts;
         heart = aboba.heart;
@@ -35,6 +32,7 @@ public class collision : MonoBehaviour
         rand = UnityEngine.Random.Range(0, music.Length);
         pauseMenu = aboba.pauseMenu;
     }
+
     void Update()
     {
         if (timer.NotPause)
@@ -64,6 +62,7 @@ public class collision : MonoBehaviour
             TryDestroyHeart();
             if (LifeCount > 0)
             {
+                effect.GetComponent<ParticleSystem>().GetComponent<Renderer>().material = Resources.Load<Material>("Materials/enemys");
                 Instantiate(effect, transform.position, Quaternion.identity);
                 Destroy(other.gameObject);
             }
@@ -77,13 +76,12 @@ public class collision : MonoBehaviour
                 if (LifeCount > 0)
                 {
                     Instantiate(effect, transform.position, Quaternion.identity);
-                    player.transform.position = other.transform.position + new Vector3(0, 5, -6);
+                    transform.position = other.transform.position + new Vector3(0, 5, -6);
                 }
             }
         }
         if (other.gameObject.tag == "floor")
         {
-            Instantiate(effect, transform.position, Quaternion.identity);
             heart.SetActive(false);
             Death();
         }
@@ -95,9 +93,10 @@ public class collision : MonoBehaviour
     }
     private void Death()
     {
+        effect.GetComponent<ParticleSystem>().GetComponent<Renderer>().material = gameObject.GetComponent<Renderer>().material;
+        Instantiate(effect, transform.position, Quaternion.identity);
         timer.NotPause = false;
-        Instantiate(effectDeath, transform.position, Quaternion.identity);
-        player.SetActive(false);
+        gameObject.SetActive(false);
         music[rand].SetActive(false);
         failedSound.SetActive(true);
         money += manager.moneyInGame;
