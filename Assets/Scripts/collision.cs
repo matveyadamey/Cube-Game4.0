@@ -75,8 +75,9 @@ public class collision : MonoBehaviour
                 TryDestroyHeart();
                 if (LifeCount > 0)
                 {
-                    Instantiate(effect, transform.position, Quaternion.identity);
                     transform.position = other.transform.position + new Vector3(0, 5, -6);
+                    effect.GetComponent<ParticleSystem>().GetComponent<Renderer>().material = Resources.Load<Material>("Materials/enemys");
+                    Instantiate(effect, transform.position, Quaternion.identity);
                 }
             }
         }

@@ -16,7 +16,6 @@ public class manager : MonoBehaviour
     
     void Start()
     {
-        print("it is new");
         aboba = GameObject.Find("aboba").GetComponent<Aboba>();
         complete = aboba.complete;
         music = aboba.music;
@@ -35,8 +34,8 @@ public class manager : MonoBehaviour
              moneyInGame++;
              moneyText.text = moneyInGame.ToString();
              moneyText.gameObject.SetActive(true);
-             var main = moneyEffect.GetComponent<ParticleSystem>().main;
-             main.startColor = player.gameObject.GetComponent<MeshRenderer>().material.color;
+             //var main = moneyEffect.GetComponent<ParticleSystem>();
+             //main.GetComponent<Renderer>().material= gameObject.GetComponent<MeshRenderer>().material;
              Instantiate(moneyEffect,transform.position, Quaternion.identity);
              Destroy(other.gameObject);
             }
