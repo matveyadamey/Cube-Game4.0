@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using System.Collections;
 
 public class collision : MonoBehaviour
 {
@@ -16,12 +17,16 @@ public class collision : MonoBehaviour
     private float score;
     private Text ScoreText;
     private GameObject pauseMenu;
-    public int LifeCount=3;
+    public int LifeCount = 3;
     public GameObject[] hearts;
     int i = 0;
+    private Animator camAnim;
+    private GameObject camera;
     private void Start()
     {
-        money =PlayerPrefs.GetInt("money");
+        camera = GameObject.FindGameObjectWithTag("MainCamera");
+        camAnim = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
+        money = PlayerPrefs.GetInt("money");
         aboba = GameObject.Find("aboba").GetComponent<Aboba>();
         hearts = aboba.hearts;
         heart = aboba.heart;
@@ -52,7 +57,7 @@ public class collision : MonoBehaviour
         }
         catch
         { }
-        
+
     }
 
     void OnCollisionEnter(Collision other)
@@ -62,19 +67,22 @@ public class collision : MonoBehaviour
             TryDestroyHeart();
             if (LifeCount > 0)
             {
+                camShaker.Shake(0.15f, 0.3f);
+                //camAnim.SetTrigger("shake");
                 effect.GetComponent<ParticleSystem>().GetComponent<Renderer>().material = Resources.Load<Material>("Materials/enemys");
                 Instantiate(effect, transform.position, Quaternion.identity);
                 Destroy(other.gameObject);
             }
         }
-        if (other.gameObject.tag == "lat") 
+        if (other.gameObject.tag == "lat")
         {
-            var front = other.gameObject.transform.position.z-3.5;
+            var front = other.gameObject.transform.position.z - 3.5;
             if (transform.position.z < front)
             {
                 TryDestroyHeart();
                 if (LifeCount > 0)
                 {
+                    camShaker.Shake(0.15f, 0.3f);
                     transform.position = other.transform.position + new Vector3(0, 5, -6);
                     effect.GetComponent<ParticleSystem>().GetComponent<Renderer>().material = Resources.Load<Material>("Materials/enemys");
                     Instantiate(effect, transform.position, Quaternion.identity);
@@ -83,6 +91,7 @@ public class collision : MonoBehaviour
         }
         if (other.gameObject.tag == "floor")
         {
+
             heart.SetActive(false);
             Death();
         }
@@ -94,6 +103,7 @@ public class collision : MonoBehaviour
     }
     private void Death()
     {
+        camShaker.Shake(0.15f, 0.3f);
         effect.GetComponent<ParticleSystem>().GetComponent<Renderer>().material = gameObject.GetComponent<Renderer>().material;
         Instantiate(effect, transform.position, Quaternion.identity);
         timer.NotPause = false;
@@ -101,7 +111,7 @@ public class collision : MonoBehaviour
         music[rand].SetActive(false);
         failedSound.SetActive(true);
         money += manager.moneyInGame;
-        PlayerPrefs.SetInt("money",money);
+        PlayerPrefs.SetInt("money", money);
         manager.moneyInGame = 0;
         Invoke("StopAll", 0.7f);
     }
@@ -112,5 +122,5 @@ public class collision : MonoBehaviour
         failed.SetActive(true);
         Time.timeScale = 0;
     }
-    
+
 }

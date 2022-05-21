@@ -7,7 +7,6 @@ public class MoveController : MonoBehaviour
     private float force=15;
     public static int speed = 15;
     Rigidbody rb;
-    public float time;
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -50,6 +49,7 @@ public class MoveController : MonoBehaviour
     {
         rb.AddForce(Vector3.up * force, ForceMode.Impulse);
         checkColl = false;
+        //GetComponent<Animation>().Play();
         //transform.rotation = Quaternion.Lerp(transform.rotation,Quaternion.Euler(0, 0, 90), Time.deltaTime*10);
 
     }
