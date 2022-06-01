@@ -1319,7 +1319,7 @@ GameObject:
   - component: {fileID: 367456786}
   m_Layer: 0
   m_Name: music1
-  m_TagString: Untagged
+  m_TagString: music
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1336,7 +1336,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 80ef7a7ce86629e4fb0bd5c3c4e1a281, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1540,7 +1540,7 @@ RectTransform:
   m_GameObject: {fileID: 408330671}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 19.75911, y: 11.114499, z: 0.10605086}
+  m_LocalScale: {x: 39.059204, y: 11.665267, z: 0.1113061}
   m_Children: []
   m_Father: {fileID: 595478701}
   m_RootOrder: 0
@@ -1548,7 +1548,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 56, y: 106}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &408330673
 MonoBehaviour:
@@ -2028,12 +2028,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.257
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -2092,7 +2092,7 @@ GameObject:
   - component: {fileID: 632528473}
   m_Layer: 0
   m_Name: music2
-  m_TagString: Untagged
+  m_TagString: music
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2109,7 +2109,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 11a296f2be080e9438bc1f2a4466cc01, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4838,9 +4838,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1658950403}
-        m_TargetAssemblyTypeName: YandexSDK, Assembly-CSharp
-        m_MethodName: ShowInterstitial
+      - m_Target: {fileID: 1648416341}
+        m_TargetAssemblyTypeName: pauseManager, Assembly-CSharp
+        m_MethodName: check
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4850,9 +4850,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1648416341}
-        m_TargetAssemblyTypeName: pauseManager, Assembly-CSharp
-        m_MethodName: check
+      - m_Target: {fileID: 1658950403}
+        m_TargetAssemblyTypeName: YandexSDK, Assembly-CSharp
+        m_MethodName: ShowInterstitial
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6109,7 +6109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6564696669522852684, guid: 086149e72019c914ab498b28d8208c0b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.9
+      value: -3.06
       objectReference: {fileID: 0}
     - target: {fileID: 6564696669522852684, guid: 086149e72019c914ab498b28d8208c0b, type: 3}
       propertyPath: m_LocalRotation.w

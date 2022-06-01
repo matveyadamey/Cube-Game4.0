@@ -13,6 +13,7 @@ TagManager:
   - lat
   - floor
   - wall
+  - music
   layers:
   - Default
   - TransparentFX

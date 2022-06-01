@@ -23,12 +23,13 @@ public class MoveController : MonoBehaviour
             rb.velocity = new Vector3(acceleration.x * 25, rb.velocity.y, speed);
             if (Input.touchCount > 0&&checkColl)
             {
-                rb.AddForce(Vector3.up * force, ForceMode.Impulse);
-                checkColl = false;
+                Jump();
+                if (manage.active)
+                {
+                    manage.SetActive(false);
+                }
             }
             */
-            
-            
             
             float moveHorizontal = Input.GetAxis("Horizontal");
             rb.velocity = new Vector3(moveHorizontal * speed, rb.velocity.y, speed);
@@ -40,7 +41,6 @@ public class MoveController : MonoBehaviour
                     manage.SetActive(false);
                 }
             }
-            
             
 
         }
