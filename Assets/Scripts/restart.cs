@@ -1,4 +1,3 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -9,22 +8,23 @@ public class restart : MonoBehaviour
     public Image whiteScreen;
     Color col;
     public Animator trans;
+    [SerializeField] private GameObject SetPlat;
+    [SerializeField] private GameObject volume;
     private void Start()
     {
         try {
             whiteScreen.gameObject.SetActive(false);
         }
         catch { }
+
+        if (!PlayerPrefs.HasKey("platformNum"))
+        {
+            Off(true);
+        }
     }
 
     public void transition()
     {
-        try { 
-            whiteScreen.gameObject.SetActive(true);
-            //trans = GameObject.Find("Image").GetComponent<Animator>();
-        }
-        catch { }
-        trans.SetTrigger("trans");
         
         /*
         while (col.a <1)
@@ -37,7 +37,7 @@ public class restart : MonoBehaviour
             print("vanyazadolbal3");
         }
         */
-        UnityEngine.SceneManagement.SceneManager.LoadScene("level 1");
+          SceneManager.LoadScene("level 1");
     }
     void WhiteScreenManager(bool s,int i)
     {
@@ -51,8 +51,13 @@ public class restart : MonoBehaviour
     {
         SceneManager.LoadScene(name);
     }
-    public void Volume(bool s)
+    public void Off(bool s)
     {
-        SetVolume.SetActive(s);
+        gameObject.transform.parent.gameObject.SetActive(s);
     }
+    public void Volume()
+    {
+        volume.SetActive(true);
+    }
+
 }

@@ -18,31 +18,34 @@ public class MoveController : MonoBehaviour
     {
         if (timer.NotPause)
         {
-            /*
-            Vector3 acceleration = Input.acceleration;
-            rb.velocity = new Vector3(acceleration.x * 25, rb.velocity.y, speed);
-            if (Input.touchCount > 0&&checkColl)
+            if (PlayerPrefs.GetInt("platformNum") == 0)
             {
-                Jump();
-                if (manage.active)
+                Vector3 acceleration = Input.acceleration;
+                rb.velocity = new Vector3(acceleration.x * 25, rb.velocity.y, speed);
+                if (Input.touchCount > 0 && checkColl)
                 {
-                    manage.SetActive(false);
+                    Jump();
+                    if (manage.active)
+                    {
+                        manage.SetActive(false);
+                    }
                 }
             }
-            */
-            
-            float moveHorizontal = Input.GetAxis("Horizontal");
-            rb.velocity = new Vector3(moveHorizontal * speed, rb.velocity.y, speed);
-            if (Input.GetKeyDown(KeyCode.UpArrow) && checkColl)
+            if (PlayerPrefs.GetInt("platformNum") == 1)
             {
-                Jump();
-                if (manage.active)
+
+                float moveHorizontal = Input.GetAxis("Horizontal");
+                rb.velocity = new Vector3(moveHorizontal * speed, rb.velocity.y, speed);
+                if (Input.GetKeyDown(KeyCode.UpArrow) && checkColl)
                 {
-                    manage.SetActive(false);
+                    Jump();
+                    if (manage.active)
+                    {
+                        manage.SetActive(false);
+                    }
                 }
+
             }
-            
-            
 
         }
     }

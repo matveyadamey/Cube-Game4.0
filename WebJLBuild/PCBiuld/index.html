@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | CubeGame3D</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
 <!-- Yandex Games SDK -->
 <script src="https://yandex.ru/games/sdk/v2"></script>
 
@@ -44,6 +39,11 @@
     })
   }
 </script>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | CubeGame3D</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
@@ -65,11 +65,11 @@
     </div>
     <script>
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/WebJLBuild.loader.js";
+      var loaderUrl = buildUrl + "/PCBiuld.loader.js";
       var config = {
-        dataUrl: buildUrl + "/WebJLBuild.data.unityweb",
-        frameworkUrl: buildUrl + "/WebJLBuild.framework.js.unityweb",
-        codeUrl: buildUrl + "/WebJLBuild.wasm.unityweb",
+        dataUrl: buildUrl + "/PCBiuld.data.unityweb",
+        frameworkUrl: buildUrl + "/PCBiuld.framework.js.unityweb",
+        codeUrl: buildUrl + "/PCBiuld.wasm.unityweb",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "LizardStudio",
         productName: "CubeGame3D",
