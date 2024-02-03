@@ -18,7 +18,6 @@ public class playerManager : MonoBehaviour
 
         var skin = Resources.Load(skinName) as GameObject;
         GameObject player = Instantiate(skin,new Vector3(), Quaternion.identity);
-        player.transform.rotation=Quaternion.Euler(0,0,-90);
         player.transform.SetParent(transform.transform, false);
     }
 }
