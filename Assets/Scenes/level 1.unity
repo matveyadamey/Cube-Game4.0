@@ -1310,7 +1310,7 @@ GameObject:
   - component: {fileID: 367456787}
   - component: {fileID: 367456786}
   m_Layer: 0
-  m_Name: music1
+  m_Name: snow
   m_TagString: music
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1326,7 +1326,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 80ef7a7ce86629e4fb0bd5c3c4e1a281, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 9bf59dc6c24a7a54ba091c6dcc249588, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.2
   m_Pitch: 1
@@ -1961,7 +1961,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 11a296f2be080e9438bc1f2a4466cc01, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 9bf59dc6c24a7a54ba091c6dcc249588, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.2
   m_Pitch: 1
@@ -5043,7 +5043,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5230510173550908877, guid: f03cd792a071d20458efbe36a53ce1ca, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5230510174177408024, guid: f03cd792a071d20458efbe36a53ce1ca, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5145,7 +5145,7 @@ MonoBehaviour:
   timerStart: {fileID: 993481158}
   failed: {fileID: 2133641681}
   complete: {fileID: 0}
-  effect: {fileID: 2336804644662355327, guid: 9b23c4b21887a59468634fe3506818c8, type: 3}
+  effect: {fileID: 0}
   failedSound: {fileID: 1092989460}
   music:
   - {fileID: 367456785}
