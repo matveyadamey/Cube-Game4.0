@@ -12,6 +12,7 @@ public class MoveController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         var aboba = GameObject.Find("aboba").GetComponent<Aboba>();
         manage=aboba.manage;
+        gameObject.transform.GetChild(0).GetComponent<Animator>().Play("Run");
     }
 
     void Update()
