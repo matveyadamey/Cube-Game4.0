@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System;
-using System.Collections;
 
 public class collision : MonoBehaviour
 {
@@ -19,17 +18,18 @@ public class collision : MonoBehaviour
     private GameObject pauseMenu;
     public int LifeCount = 3;
     public GameObject[] hearts;
+    private ParticleSystem PlayerEffect;
     int i = 0;
-    private Animator camAnim;
     private GameObject camera;
+    ParticleSystem spawn;
     private void Start()
     {
         camera = GameObject.FindGameObjectWithTag("MainCamera");
-        camAnim = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Animator>();
         money = PlayerPrefs.GetInt("money");
         aboba = GameObject.Find("aboba").GetComponent<Aboba>();
         hearts = aboba.hearts;
         heart = aboba.heart;
+        PlayerEffect = aboba.PlayerEffect;
         ScoreText = aboba.ScoreText;
         failed = aboba.failed;
         failedSound = aboba.failedSound;
@@ -44,6 +44,7 @@ public class collision : MonoBehaviour
         {
             score = (float)Math.Round(Time.timeSinceLevelLoad) - 3;
             ScoreText.text = "¬аш счет: " + score.ToString();
+            spawn.transform.position = new Vector3(transform.position.x, transform.position.y - 0.7f, transform.position.z - 0.7f);
         }
     }
 
@@ -62,13 +63,18 @@ public class collision : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
+        if(other.gameObject.tag == "earth"| other.gameObject.tag == "lat")
+        {
+            spawn = Instantiate(PlayerEffect, new Vector3(transform.position.x, transform.position.y-0.7f, transform.position.z - 1),
+                Quaternion.Euler(transform.rotation.x-90, transform.rotation.y, transform.rotation.z));
+            spawn.Play();
+        }
         if (other.gameObject.tag == "enemy")
         {
             TryDestroyHeart();
             if (LifeCount > 0)
             {
                 camShaker.Shake(0.15f, 0.3f);
-                //camAnim.SetTrigger("shake");
                 effect.GetComponent<ParticleSystem>().GetComponent<Renderer>().material = Resources.Load<Material>("Materials/enemys");
                 Instantiate(effect, transform.position, Quaternion.identity);
                 Destroy(other.gameObject);
@@ -100,6 +106,10 @@ public class collision : MonoBehaviour
             Death();
         }
 
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        spawn.Stop();
     }
     private void Death()
     {

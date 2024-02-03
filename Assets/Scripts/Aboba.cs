@@ -19,6 +19,7 @@ public class Aboba : MonoBehaviour
     public GameObject[] hearts;
     public GameObject manage;
     public Text moneyText;
+    public ParticleSystem PlayerEffect;
     private void Start()
     {
         StartCoroutine(TransitionIn());

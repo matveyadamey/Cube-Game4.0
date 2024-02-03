@@ -20,8 +20,8 @@ public class MoveController : MonoBehaviour
         {
             if (PlayerPrefs.GetInt("platformNum") == 0)
             {
-                Vector3 acceleration = Input.acceleration;
-                rb.velocity = new Vector3(acceleration.x * 25, rb.velocity.y, speed);
+                float x = Input.GetAxis("X");
+                rb.velocity = new Vector3(x * 25, rb.velocity.y, speed);
                 if (Input.touchCount > 0 && checkColl)
                 {
                     Jump();
