@@ -65,8 +65,8 @@ public class collision : MonoBehaviour
     {
         if(other.gameObject.tag == "earth"| other.gameObject.tag == "lat")
         {
-            spawn = Instantiate(PlayerEffect, new Vector3(transform.position.x, transform.position.y-0.7f, transform.position.z - 1),
-                Quaternion.Euler(transform.rotation.x-90, transform.rotation.y, transform.rotation.z));
+            spawn = Instantiate(PlayerEffect, new Vector3(transform.position.x, transform.position.y-0.7f, transform.position.z - 0.5f),
+                Quaternion.Euler(90,0,0));
             spawn.Play();
         }
         if (other.gameObject.tag == "enemy")
@@ -115,7 +115,7 @@ public class collision : MonoBehaviour
     {
         camShaker.Shake(0.15f, 0.3f);
         effect.GetComponent<ParticleSystem>().GetComponent<Renderer>().material = gameObject.GetComponent<Renderer>().material;
-        Instantiate(effect, transform.position, Quaternion.identity);
+        Instantiate(effect, new Vector3(transform.position.x, transform.position.y, transform.position.z+40), Quaternion.identity);
         timer.NotPause = false;
         gameObject.SetActive(false);
         music[rand].SetActive(false);

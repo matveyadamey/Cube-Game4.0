@@ -22,7 +22,7 @@ public class MoveController : MonoBehaviour
 
             float moveHorizontal = Input.GetAxis("Horizontal");
             rb.velocity = new Vector3(moveHorizontal * speed, rb.velocity.y, speed);
-            if (Input.GetKeyDown(KeyCode.UpArrow) && checkColl)
+            if (Input.GetKeyDown(KeyCode.W) && checkColl)
             {
                 Jump();
                 if (manage.active)
