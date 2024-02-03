@@ -12,17 +12,17 @@ public class MoveController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         var aboba = GameObject.Find("aboba").GetComponent<Aboba>();
         manage=aboba.manage;
-        gameObject.transform.GetChild(0).GetComponent<Animator>().Play("Run");
+        gameObject.transform.GetChild(0).GetComponent<Animator>().Play("Idle");
     }
 
     void Update()
     {
         if (timer.NotPause)
         {
-
+            gameObject.transform.GetChild(0).GetComponent<Animator>().Play("Run");
             float moveHorizontal = Input.GetAxis("Horizontal");
             rb.velocity = new Vector3(moveHorizontal * speed, rb.velocity.y, speed);
-            if (Input.GetKeyDown(KeyCode.UpArrow) && checkColl)
+            if (Input.GetKeyDown(KeyCode.W) && checkColl)
             {
                 Jump();
                 if (manage.active)
