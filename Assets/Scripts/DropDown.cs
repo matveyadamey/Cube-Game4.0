@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.IO;
 
 public class DropDown : MonoBehaviour
 {
@@ -10,17 +11,9 @@ public class DropDown : MonoBehaviour
 
     public void HandleInputData(int val)
     {
-        if (val == 0)
-        {
-            output.text = "ростов";
-        }
-        if (val == 1)
-        {
-            output.text = "москва";
-        }
-        if (val == 2)
-        {
-            output.text = "махачкала";
-        }
+        string[] arr = { "Sochi", "Yerevan", "Gorno - Altaysk", "Moscow", "Buenos - Aires", "Montevideo", "Helsinki", "Ottawa", "Almaty", "Dubai", "Cape Town", "Cairo" };
+        print(arr[val-1]);
+        string file="C:/Users/matve/Documents/GitHub/Cube-Game4.0/Assets/Scripts/city.txt";
+        File.WriteAllText(file, arr[val-1]);
     }
 }
