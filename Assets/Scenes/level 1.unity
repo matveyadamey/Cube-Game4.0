@@ -1536,6 +1536,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Azure: {fileID: 425064158}
+  Time: {fileID: 425064165}
+--- !u!114 &425064165 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8819850312524708653, guid: 9bea82b36e6211643a47c5ca9fc3944e, type: 3}
+  m_PrefabInstance: {fileID: 1565109305}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 425064154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd7ea2447e0e6f748b11a51d891f172d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &468482890
 GameObject:
   m_ObjectHideFlags: 0
