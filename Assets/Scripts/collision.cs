@@ -82,19 +82,20 @@ public class collision : MonoBehaviour
         }
         if (other.gameObject.tag == "lat")
         {
-            var front = other.gameObject.transform.position.z - 3.5;
-            if (transform.position.z < front)
-            {
-                TryDestroyHeart();
-                if (LifeCount > 0)
+            print(2323);
+            other.gameObject.GetComponent<MeshCollider>().enabled = false;
+            other.gameObject.GetComponent<BoxCollider>().enabled = false;
+            TryDestroyHeart();
+            if (LifeCount > 0)
                 {
+                    print(65656);
                     camShaker.Shake(0.15f, 0.3f);
                     transform.position = other.transform.position + new Vector3(0, 5, -6);
                     effect.GetComponent<ParticleSystem>().GetComponent<Renderer>().material = Resources.Load<Material>("Materials/enemys");
                     Instantiate(effect, transform.position, Quaternion.identity);
                 }
-            }
         }
+
         if (other.gameObject.tag == "floor")
         {
 

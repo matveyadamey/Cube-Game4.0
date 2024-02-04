@@ -14,10 +14,11 @@ namespace UnityEngine.AzureSky
         {
             var pythonArgs = "C:/Users/matve/Documents/GitHub/Cube-Game4.0/Assets/Scripts/getAll.py";
             System.Diagnostics.Process.Start("python", pythonArgs);
-            string file1 = @"Assets/Scripts/weather.txt";
+            string file1 = @"C:/Users/matve/Documents/GitHub/Cube-Game4.0/Assets/Scripts/weather.txt";
             weatherState = int.Parse(File.ReadAllText(file1));
+            print(weatherState);
             Azure.SetNewWeatherProfile(weatherState);
-            string file2 = @"Assets/Scripts/time.txt";
+            string file2 = @"C:/Users/matve/Documents/GitHub/Cube-Game4.0/Assets/Scripts/time.txt";
             time = int.Parse(File.ReadAllText(file2));
             Time.SetTimeline(time);
         }

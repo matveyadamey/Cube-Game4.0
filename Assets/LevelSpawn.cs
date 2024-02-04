@@ -12,16 +12,15 @@ public class LevelSpawn : MonoBehaviour
         string[] winterCitys = { "Yerevan", "Gorno - Altaysk", "Helsinki", "Ottawa", "Almaty" };
         string file1 = @"C:/Users/matve/Documents/GitHub/Cube-Game4.0/Assets/Scripts/city.txt";
         string num = File.ReadAllText(file1);
-        print(num);
         if (winterCitys.Contains(num))
         {
             GameObject lev = Instantiate(Prefabs[1], new Vector3(0, 0, 0), Quaternion.identity);
-            Destroy(lev, 12);
+            Destroy(lev, 24);
         }
         else
         {
             GameObject lev = Instantiate(Prefabs[0], new Vector3(0, 0, 0), Quaternion.identity);
-            Destroy(lev, 12);
+            Destroy(lev, 24);
         }
     }
 }
